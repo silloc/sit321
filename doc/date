@@ -1,0 +1,69 @@
+#创建数据库
+CREATE DATABASE  `message` DEFAULT CHARACTER SET gb2312 COLLATE gb2312_bin;
+
+权限表 role
+id  //表编号
+role_name //权限名称 [管理员、老师、学生]
+role_id   //权限值      [0、1、2]
+
+#创建权限表
+CREATE TABLE  `message`.`role` (
+`id` INT( 4 ) NOT NULL AUTO_INCREMENT ,
+`role_name` VARCHAR( 8 ) NOT NULL ,
+`role_id` INT( 4 ) NOT NULL ,
+PRIMARY KEY (  `id` )
+) ENGINE = MYISAM CHARACTER SET gb2312 COLLATE gb2312_bin COMMENT =  '权限表';
+#添加表数据
+INSERT INTO `message`.`role` (`id`, `role_name`, `role_id`) 
+VALUES (NULL, '管理员', '0'), (NULL, '老师', '1'),(NULL, '学生', '2');
+
+
+用户表
+id //表编号
+username  //用户名称
+password  //用户密码 （用md5 加密）
+role_id   //用户权限   来自role表
+
+#创建用户表
+CREATE TABLE  `message`.`user` (
+`id` INT( 4 ) NOT NULL AUTO_INCREMENT ,
+`username` VARCHAR( 200 ) NOT NULL ,
+`password` VARCHAR( 200 ) NOT NULL ,
+`role_id` INT( 4 ) NOT NULL ,
+PRIMARY KEY (  `id` )
+) ENGINE = MYISAM CHARACTER SET gb2312 COLLATE gb2312_bin;
+#添加数据
+
+
+INSERT INTO `message`.`user` (`id`, `username`, `password`, `role_id`) VALUES (NULL, 'admin', MD5('123456'), '0');
+INSERT INTO `message`.`user` (`id`, `username`, `password`, `role_id`) VALUES (NULL, 'js', MD5('123456'), '1'), (NULL, 'xs', MD5('123456'), '2');
+
+#创建教师信息表
+id  //表编号
+user_id //登录用户id 与 user表对应
+name   //教师名字
+
+CREATE TABLE  `message`.`teacher` (
+`id` INT( 4 ) NOT NULL AUTO_INCREMENT ,
+`user_id` INT( 4 ) NOT NULL ,
+`name` VARCHAR( 200 ) NOT NULL ,
+PRIMARY KEY (  `id` )
+) ENGINE = MYISAM CHARACTER SET gb2312 COLLATE gb2312_bin;
+
+#添加一条教师信息
+INSERT INTO `message`.`teacher` (`id`, `user_id`, `name`) VALUES (NULL, '2', '张三');
+
+#添加一个班级
+INSERT INTO `message`.`grade` (`id`, `gname`) VALUES (NULL, '1-106');
+
+#创建 tforc 表 教师与班级关系表
+CREATE TABLE  `message`.`tforc` (
+`id` INT( 4 ) NOT NULL AUTO_INCREMENT ,
+`tid` INT( 4 ) NOT NULL ,
+`cid` INT( 4 ) NOT NULL ,
+PRIMARY KEY (  `id` )
+) ENGINE = MYISAM CHARACTER SET gb2312 COLLATE gb2312_bin;
+
+
+#表字段的修改
+ALTER TABLE  `student` CHANGE  `telehpon`  `telehpon` BIGINT( 25 ) NOT NULL
