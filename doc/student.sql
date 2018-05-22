@@ -40,8 +40,8 @@ CREATE TABLE IF NOT EXISTS `evaluate` (
 --
 
 INSERT INTO `evaluate` (`id`, `su_id`, `tu_id`, `evalue`, `times`) VALUES
-(1, 3, 2, 'Well', '2013-04-19'),
-(3, 12, 2, 'Not bad', '2017-04-18');
+(1, 3, 2, '好啊好啊这个学生', '2013-04-19'),
+(3, 12, 2, '老师对学生的评价', '2017-04-18');
 
 -- --------------------------------------------------------
 
@@ -132,8 +132,8 @@ CREATE TABLE IF NOT EXISTS `home` (
 --
 
 INSERT INTO `home` (`id`, `user_id`, `title`, `name`, `work`, `telephone`) VALUES
-(1, 3, 'FatherSon', '', '', '111111'),
-(2, 3, 'MotherSon', '', '', '111111');
+(1, 3, '父子', '爱到疯', '阿达', '111111'),
+(2, 3, '母子', '阿斗', '阿发但是', '111111');
 
 -- --------------------------------------------------------
 
@@ -168,9 +168,9 @@ INSERT INTO `plugin_classes_01` (`id`, `kch`, `kxh`, `kcm`, `ywkcm`, `xf`, `kcsx
 
 CREATE TABLE IF NOT EXISTS `plugin_classes_02` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
-  `weeks` int(4) DEFAULT NULL COMMENT 'week',
+  `weeks` int(4) DEFAULT NULL COMMENT '周',
   `section` int(4) DEFAULT NULL COMMENT '节',
-  `course` varchar(50) COLLATE gb2312_bin DEFAULT NULL COMMENT 'class name',
+  `course` varchar(50) COLLATE gb2312_bin DEFAULT NULL COMMENT '程课名称',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=gb2312 COLLATE=gb2312_bin AUTO_INCREMENT=6 ;
 
@@ -179,9 +179,9 @@ CREATE TABLE IF NOT EXISTS `plugin_classes_02` (
 --
 
 INSERT INTO `plugin_classes_02` (`id`, `weeks`, `section`, `course`) VALUES
-(1, 1, 1, 'web development'),
-(4, 2, 1, 'C#'),
-(5, 3, 2, 'Php is the best!');
+(1, 1, 1, '嵌入式'),
+(4, 2, 1, '大学英语'),
+(5, 3, 2, '体育');
 
 -- --------------------------------------------------------
 
@@ -230,9 +230,9 @@ CREATE TABLE IF NOT EXISTS `student` (
 --
 
 INSERT INTO `student` (`id`, `user_id`, `studentcode`, `studentno`, `name`, `grade`, `telehpon`, `homeadd`, `postaladdress`, `address`) VALUES
-(1, 3, '123121231111', 'xs', 'ben', 4, 0, '', '', ''),
-(5, 8, '', 'xs1000', 'Li', 0, 0, '', '', ''),
-(6, 12, '', 'xs10002', 'Ricky', 1, 0, '', '', '');
+(1, 3, '123121231111', 'xs', '小王', 4, 0, '家庭住址1', '通讯地址2', '现住地址3'),
+(5, 8, '', 'xs1000', '', 0, 0, '', '', ''),
+(6, 12, '', 'xs10002', '王小命', 1, 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -252,7 +252,7 @@ CREATE TABLE IF NOT EXISTS `teacher` (
 --
 
 INSERT INTO `teacher` (`id`, `user_id`, `name`) VALUES
-(1, 2, 'Rob'),
+(1, 2, '王五'),
 (4, 11, ''),
 (5, 13, '');
 

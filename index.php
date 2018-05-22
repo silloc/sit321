@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>管理平台</title>
+<title>SARMS</title>
 <style type="text/css">
 <!--
 body {
@@ -25,12 +25,12 @@ body {
 		var uname=$("#username").val();
 		var upass=$("#password").val();
 	    if(uname==""){
-		  alert("请输入用户名！");
+		  alert("Please enter username!");
 		  $("#username").focus();
 		  return(flag=false);
 		}
 	    if(upass==""){
-		  alert("请输入用户密码！");
+		  alert("Please enter password!");
 		  $("#password").focus();
 		  return(flag=false);
 		}
@@ -63,11 +63,11 @@ body {
 				
 				 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 				  <tr>
-					<td width="21%" height="30"><div align="center"><span class="STYLE3">用户</span></div></td>
-					<td width="79%" height="30"><input type="text" id="username" name="username"  style="height:18px; width:130px; border:solid 1px #cadcb2; font-size:12px; color:#81b432;"></td>
+					<td  height="30"><div align="center"><span class="STYLE3">User Name</span></div></td>
+					<td height="30"><input type="text" id="username" name="username"  style="height:18px; width:130px; border:solid 1px #cadcb2; font-size:12px; color:#81b432;"></td>
 				  </tr>
 				  <tr>
-					<td height="30"><div align="center"><span class="STYLE3">密码</span></div></td>
+					<td height="30"><div align="center"><span class="STYLE3">Password</span></div></td>
 					<td height="30"><input type="password" id="password" name="password"  style="height:18px; width:130px; border:solid 1px #cadcb2; font-size:12px; color:#81b432;"></td>
 				  </tr>
 				  <tr>
@@ -95,7 +95,7 @@ body {
             <td height="30"><table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td width="44%" height="20">&nbsp;</td>
-                <td width="56%" class="STYLE4">版本 2013 V1.0 </td>
+                <td width="56%" class="STYLE4">Version 2018 v1.0</td>
               </tr>
             </table></td>
             <td>&nbsp;</td>
